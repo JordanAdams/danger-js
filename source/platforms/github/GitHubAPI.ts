@@ -311,6 +311,13 @@ export class GitHubAPI {
     return res.ok ? res.json() : []
   }
 
+  getPullRequestFromBranch = async (branch: string): Promise<any> => {
+    const repo = this.repoMetadata.repoSlug
+    const res = await this.get(`repos/${repo}/pulls?head=${branch}`)
+
+    return res.ok ? res.json() : []
+  }
+
   getReviewerRequests = async (): Promise<any> => {
     const repo = this.repoMetadata.repoSlug
     const prID = this.repoMetadata.pullRequestID

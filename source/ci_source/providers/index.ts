@@ -15,6 +15,7 @@ import { TeamCity } from "./TeamCity"
 import { Travis } from "./Travis"
 import { VSTS } from "./VSTS"
 import { Screwdriver } from "./Screwdriver"
+import { Heroku } from "./Heroku"
 
 const providers = [
   Travis,
@@ -34,6 +35,7 @@ const providers = [
   TeamCity,
   Screwdriver,
   Concourse,
+  Heroku
 ]
 
 // Mainly used for Dangerfile linting
@@ -53,6 +55,7 @@ const realProviders = [
   TeamCity,
   Screwdriver,
   Concourse,
+  Heroku
 ]
 
 export { providers, realProviders }

@@ -75,6 +75,18 @@ describe("API testing", () => {
     })
   })
 
+  it("getPullRequestFromBranch", async () => {
+    api.fetch = fetchJSON
+    expect(await api.getPullRequestFromBranch("mybranch")).toMatchObject({
+      api: "https://api.github.com/user",
+      headers: {
+        Authorization: "token ABCDE",
+        "Content-Type": "application/json",
+      },
+      method: "GET",
+    })
+  })
+
   it("updateCommentWithID", async () => {
     api.fetch = fetch
     api.patch = jest.fn(() => ({ json: jest.fn() }))
